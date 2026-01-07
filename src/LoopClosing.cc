@@ -1,3 +1,4 @@
+#include <unistd.h>
 /**
 * This file is part of ORB-SLAM3
 *
@@ -2409,7 +2410,7 @@ void LoopClosing::RunGlobalBundleAdjustment(Map* pActiveMap, unsigned long nLoop
 
 
                     string strNameFile = pKF->mNameFile;
-                    cv::Mat imLeft = cv::imread(strNameFile, CV_LOAD_IMAGE_UNCHANGED);
+                    cv::Mat imLeft = cv::imread(strNameFile, cv::IMREAD_UNCHANGED);
 
                     cv::cvtColor(imLeft, imLeft, CV_GRAY2BGR);
 
